@@ -11,7 +11,7 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat '"C:\Program Files\Git\bin\git.exe" -c "./jenkins/scripts/test.sh"'
+                bat '"C:\\Program Files\\Git\\bin\\git.exe" -c "./jenkins/scripts/test.sh"'
             }
         }
     }
