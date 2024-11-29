@@ -11,7 +11,14 @@ pipeline {
         }
         stage('Test') {
             steps {
-                bat '"C:\\Program Files\\Git\\bin\\bash.exe" -c chmod +x ./jenkins/scripts/test.sh && ./jenkins/scripts/test.sh"' // Use Git Bash to run the script
+                script {
+                    // Check if the script exists and is executable
+                    if (fileExists('./jenkins/scripts/test.sh')) {
+                        bat '"C:\\Program Files\\Git\\bin\\bash.exe" -c ./jenkins/scripts/test.sh' // Directly run the script with Git Bash
+                    } else {
+                        error "test.sh script not found!"
+                    }
+                }
             }
         }
     }
