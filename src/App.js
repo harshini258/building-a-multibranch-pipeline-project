@@ -15,7 +15,8 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React<br/>
+          Adding the optional part to DevOps Assignment.
         </a>
       </header>
     </div>
@@ -23,3 +24,4 @@ function App() {
 }
 
 export default App;
+
